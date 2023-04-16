@@ -198,23 +198,6 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
-	Name = "room",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "功能出问题联系群996444915只有管理员你的小天使是我或者联系341599623"
-})
-
-Tab:AddButton({
-	Name = "room自动行走",
-	Callback = function()
-           loadstring(game:HttpGet("https://" .. "raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk"))()
-    end    
-})
-
-local Tab = Window:MakeTab({
 	Name = "doors",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
