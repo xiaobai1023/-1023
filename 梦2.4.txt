@@ -19,12 +19,7 @@ local Section = Tab:AddSection({
 	Name = "功能通用"
 })
 
-OrionLib:MakeNotification({
-	Name = "梦",
-	Content = "当前版本2.4",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
+game:GetService("StarterGui"):SetCore("SendNotification",{                Title = "梦";                Text ="加载成功";                Duration = 4;            })
 
 Tab:AddButton({
 	Name = "飞行",
@@ -507,5 +502,8 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "主要制作你的小天使和noob制作，无法移动点击修改移动速度4月26日更新脚本"
+	Name = "主要制作你的小天使和noob制作，无法移动点击修改移动速度4月26日更新脚本交流群996444915"
 })
+
+
+OrionLib:Init()
