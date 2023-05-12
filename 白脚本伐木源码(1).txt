@@ -86,25 +86,25 @@ local bai = {
 }
 spawn(function()
     while task.wait() do
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "bigfool1023付费脚本"
+        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "小白付费脚本"
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
-            "梦,牛逼"
+            "小白,牛逼"
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
-            "梦脚本"
+            "小白脚本"
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "梦"
+        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "小白"
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "梦脚本"
+        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "小白脚本"
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
@@ -827,13 +827,13 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
     local tool = barkgetBestAxe2()
     local sawmill = getBestSawmill()
     if tool == nil then
-        notify("梦", "请你装备斧头", 4)
+        notify("小白", "请你装备斧头", 4)
         return
     end
 
     if wood_class == "LoneCave" then
         if tool.ToolName.Value ~= "EndTimesAxe" then
-            notify("梦", "请你装备末日斧头", 4)
+            notify("小白", "请你装备末日斧头", 4)
             return
         end
     end
@@ -866,7 +866,7 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
     end
 
     if not WoodSection then
-        notify("梦", "没有找到树", 4)
+        notify("小白", "没有找到树", 4)
         return
     end
 
@@ -946,7 +946,7 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
         end
         iterations = iterations + 1
         if iterations > 300 then
-            notify("梦", "没有成功处理树", 4)
+            notify("小白", "没有成功处理树", 4)
         end
         tp(CFrame.new(Chopped.WoodSection.Position) + Vector3.new(0, 4, 0))
         -- game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(Chopped.WoodSection)
@@ -968,7 +968,7 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
         local owner = child:WaitForChild("Owner")
         if owner.Value == game.Players.LocalPlayer and child:FindFirstChild("Type") and child.Type.Value == "Structure" then
             if not child:FindFirstChild("BuildDependentWood") then
-                notify("梦", "没有成功", 4)
+                notify("小白", "没有成功", 4)
                 return
             end
             new_structure_connection:Disconnect()
@@ -988,7 +988,7 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
             game.ReplicatedStorage.Interaction.DestroyStructure:FireServer(Sawed)
             game.ReplicatedStorage.Interaction.DestroyStructure:FireServer(blueprint)
             -- pcall(rconsoleprint, "Way too many attempts to teleport blueprint to wood!\n")
-            notify("梦", "尝试太多次蓝图填充木头了", 4)
+            notify("小白", "尝试太多次蓝图填充木头了", 4)
             -- end
         end
         iterations = iterations + 1
@@ -1010,7 +1010,7 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
         local bp_wait_iter = 0
         repeat
             if bp_wait_iter > 500 then
-                notify("梦", "没有找到蓝图", 4)
+                notify("小白", "没有找到蓝图", 4)
                 -- game.ReplicatedStorage.Interaction.DestroyStructure:FireServer(blueprint)
                 -- game.ReplicatedStorage.PlaceStructure.ClientPlacedBlueprint:FireServer(bp_type, Sawed.WoodSection.CFrame, game.Players.LocalPlayer, nil, false)
                 -- bp_wait_iter = 0
@@ -1031,7 +1031,7 @@ local function lumbsmasher_legitpaint(wood_class, blueprint, tpback)
     -- pcall(rconsoleprint, "Placed!\n")
     if tpback then
         tp(old)
-        notify("梦", "完成", 4)
+        notify("小白", "完成", 4)
     end
 end
 
@@ -1062,7 +1062,7 @@ end
 local function getBestAxe(treeClass)
     local tools = getTools()
     if #tools == 0 then
-        return notify("梦", "你需要斧头", 4)
+        return notify("小白", "你需要斧头", 4)
     end
     local toolStats = {}
     local tool
@@ -1083,7 +1083,7 @@ local function getBestAxe(treeClass)
         })
     end
     if not tool and treeClass == "LoneCave" then
-        return notify("梦", "你需要末日斧头", 4)
+        return notify("小白", "你需要末日斧头", 4)
     end
     table.sort(toolStats, function(a, b)
         return a.damage > b.damage
@@ -1189,7 +1189,7 @@ local function bringTree(treeClass)
     end
     local tree = getBiggestTree(treeClass)
     if not tree then
-        return notify("梦", "没有找到树", 3)
+        return notify("小白", "没有找到树", 3)
     end
 
     spawn(function()
@@ -1211,7 +1211,7 @@ local function autofarm(treeClass)
     local tree = getBiggestTree(treeClass)
 
     if not tree then
-        return notify("梦", "没有找到树", 3)
+        return notify("小白", "没有找到树", 3)
     end
 
     local treeCut = false
@@ -1244,7 +1244,7 @@ local function autofarm(treeClass)
         task.wait(axeStats.SwingCooldown - 14)
     until treeCut
     if bai.autofarm1 == false then
-        notify("梦", "完成", 3)
+        notify("小白", "完成", 3)
     end
     tp(oldPosition)
 end
@@ -1267,7 +1267,7 @@ local function OpenSelectedItem(item)
     local itemBox = item:FindFirstChild('BoxItemName') or item:FindFirstChild('PurchasedBoxItemName');
     if itemBox and item:FindFirstChild('Type') and item.Type.Value ~= 'Structure' then
         game:GetService('ReplicatedStorage').Interaction.ClientInteracted:FireServer(item, 'Open box');
-        notify('梦', '成功打开', 4)
+        notify('小白', '成功打开', 4)
     end
 end
 
@@ -1324,14 +1324,14 @@ local function donate(plr, amount)
     scr.sendDonation();
     game:GetService 'RunService'.Heartbeat:wait();
     scr2.exitNotice();
-    notify('梦', '正在尝试转钱', 2);
+    notify('小白', '正在尝试转钱', 2);
     wait(6)
     if game:GetService('Players'):FindFirstChild(plr).leaderstats.Money.Value ~= oldAmount + amount then
         notify('错误', '错误可能需要冷却', 4);
         scr2.exitNotice();
         return;
     end
-    notify('梦', '转钱' .. tostring(amount) .. ' 给 ' .. tostring(plr), 4);
+    notify('小白', '转钱' .. tostring(amount) .. ' 给 ' .. tostring(plr), 4);
     scr2.exitNotice();
 end
 local function OwnerCheck(item)
@@ -1347,7 +1347,7 @@ local function farAxeEquip()
 
     local done = false;
     if bai.farAxeEquip == nil then
-        notify('梦', '选择一把斧头', 4);
+        notify('小白', '选择一把斧头', 4);
         bai.farAxeEquip = Mouse.Button1Down:connect(function()
             local target = Mouse.Target;
             if target.Parent:IsA('Model') and target.Parent:FindFirstChild('ToolName') then
@@ -1361,7 +1361,7 @@ local function farAxeEquip()
         repeat
             wait()
         until done;
-        notify('梦', '已装备', 4);
+        notify('小白', '已装备', 4);
         if bai.farAxeEquip then
             bai.farAxeEquip:Disconnect();
             bai.farAxeEquip = nil;
@@ -1471,19 +1471,19 @@ end
 local function PlankToBlueprint()
 
     local target;
-    notify('梦', '选择一个木头和蓝图', 2);
+    notify('小白', '选择一个木头和蓝图', 2);
     bai.PlankToBlueprint = game:GetService('Players').LocalPlayer:GetMouse().Button1Down:Connect(function()
         if game:GetService('Players').LocalPlayer:GetMouse().Target then
             target = game:GetService('Players').LocalPlayer:GetMouse().Target;
         end
         if target.Parent:FindFirstChild('Type') and target.Parent.Type.Value == 'Blueprint' then
             bai.blueprintModel = game:GetService('Players').LocalPlayer:GetMouse().Parent;
-            notify('梦', '蓝图已选择', 2);
+            notify('小白', '蓝图已选择', 2);
         end
         if tostring(target.Parent) == 'Plank' and target.Parent:FindFirstChild('Owner') and
             tostring(target.Parent.Owner.Value) == tostring(lp) then
             bai.plankModel = target.Parent;
-            notify('梦', '木头已选择', 2);
+            notify('小白', '木头已选择', 2);
         end
     end);
     repeat
@@ -1501,7 +1501,7 @@ local function PlankToBlueprint()
         end);
     end
 
-    notify('梦', '完成', 2);
+    notify('小白', '完成', 2);
     bai.blueprintModel = nil;
     bai.plankModel = nil;
 end
@@ -1521,7 +1521,7 @@ local function burnAllShopItems()
         end
     end
     if not found then
-        notify('梦', '没有找到压力板', 4);
+        notify('小白', '没有找到压力板', 4);
         return;
     end
 end
@@ -1577,7 +1577,7 @@ local function Press(Button)
 end
 function CanClientLoad()
     if not game:GetService "ReplicatedStorage".LoadSaveRequests.ClientMayLoad:InvokeServer(lp) then
-        notify("梦", "等待加载时间,请耐心的等待", 4)
+        notify("小白", "等待加载时间,请耐心的等待", 4)
         repeat
             game:GetService "RunService".Stepped:wait()
         until game:GetService "ReplicatedStorage".LoadSaveRequests.ClientMayLoad:InvokeServer(lp)
@@ -1697,7 +1697,7 @@ function autobuyv2(o)
     item = finditem(o)
 
     if item == nil then
-        notify("梦", "没有找到商品或者没有刷新，请你等待", 4)
+        notify("小白", "没有找到商品或者没有刷新，请你等待", 4)
         repeat
             task.wait()
             item = finditem(o)
@@ -1789,9 +1789,9 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local bailib = loadstring(game:HttpGet "https://pastebin.com/raw/DW3eJwe6")()
-local win = bailib:new("梦--伐木大亨2", '')
-local Tab1 = win:Tab("bigfool1023玩家功能", "10882439086")
+local bailib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/xiaobai1023/xiaobaijiaobeng/main/Protected.lua'),true))()
+local win = bailib:new("小白--伐木大亨2", '')
+local Tab1 = win:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
 local Section4 = Tab1:section("普通传送", false)
 local Sectiontptree = Tab1:section("传送到树旁边", false)
@@ -1857,7 +1857,7 @@ Section:Toggle("自动捡斧头", 'Toggleflag', false, function(state)
 end)
 
 Section:Button("如何用加载复制斧头", function()
-    notlft("梦",
+    notlft("小白",
         "默认死亡时间为3.1秒，如果卡在加载界面就增加时间,如果斧头被保存了就减少时间,加减推荐是在3.1的基础上来,推荐加减时间为0.1秒",
         "好")
 end)
@@ -1865,7 +1865,7 @@ Section:Textbox("死亡后多长时间加载", 'TextBoxfalg', "输入数字", fu
     bai.loaddupeaxewaittime = txt
 end)
 Section:Button("获取当前死亡后加载时间", function()
-    bailib:Notification("梦", " 时间为" .. bai.loaddupeaxewaittime .. "秒", "好")
+    bailib:Notification("小白", " 时间为" .. bai.loaddupeaxewaittime .. "秒", "好")
 end)
 Section:Button("加载复制斧头", function()
     CanClientLoad()
@@ -1898,7 +1898,7 @@ Section:Toggle("斧头炸家", 'Toggleflag', false, function(state)
 end)
 Section1:Button("点击土地免费获得", function()
     freeland=nil
-    notify("梦","请你点击一个空的土地",4)
+    notify("小白","请你点击一个空的土地",4)
     ClickToSelectClick = Mouse.Button1Up:Connect(function()
     Clicked = Mouse.Target
    
@@ -1912,7 +1912,7 @@ Section1:Button("点击土地免费获得", function()
                 Instance.new('RemoteEvent', game:service 'ReplicatedStorage'.Interaction).Name = "Ban"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.OriginSquare.CFrame +Vector3.new(0, 10, 0)
             else
-                notify("梦","这个土地有主人了",4)
+                notify("小白","这个土地有主人了",4)
        end
     end
     end)
@@ -1993,17 +1993,17 @@ Section1:Button("加载", function()
         if CheckIfSlotAvailable(CheckSlot) == true then
             local LoadSlot = game.ReplicatedStorage.LoadSaveRequests.RequestLoad:InvokeServer(CheckSlot)
             if LoadSlot == false then
-                notify("梦", "有冷却现在不能加载!", 1)
+                notify("小白", "有冷却现在不能加载!", 1)
             end
             if LoadSlot == true then
-                notify("梦", "已加载!", 2)
+                notify("小白", "已加载!", 2)
                 CurrentSlot = CheckSlot
             end
         else
-            notify("梦", "貌似不工作了", 2)
+            notify("小白", "貌似不工作了", 2)
         end
     else
-        notify("梦", "请你填数字☹️", 2)
+        notify("小白", "请你填数字☹️", 2)
     end
     ScriptLoadOrSave = false
 end)
@@ -2393,7 +2393,7 @@ Sectionbringtree:Toggle("自动赚钱", 'Toggleflag', false, function(state)
         NotificationBindable.OnInvoke = callback
         --
         game.StarterGui:SetCore("SendNotification", {
-            Title = "梦",
+            Title = "小白",
             Text = "使用此功能前请你打开自动卖木头",
             Icon = "",
             Duration = 6,
@@ -2433,17 +2433,17 @@ Section5:Toggle("查看幻影", 'Toggleflag', false, function(state)
 end)
 Section5:Button("锯木机最大木头体型", function()
     local connection, sawmillModel;
-    notify('梦', '选择一个剧木机', 4)
+    notify('小白', '选择一个剧木机', 4)
     connection = mouse.Button1Down:Connect(function(b)
         local target = mouse.Target;
         if target then
             sawmill = target.Parent;
             if sawmill.Name:find('Sawmill') then
                 sawmillModel = sawmill;
-                notify('梦', '剧木机已选择', 4)
+                notify('小白', '剧木机已选择', 4)
             elseif sawmill.Parent.Name:find('Sawmill') or sawmill.Parent:FindFirstChild 'BlockageAlert' then
                 sawmillModel = sawmill.Parent
-                notify('梦', '剧木机已选择', 4)
+                notify('小白', '剧木机已选择', 4)
             end
         end
     end);
@@ -2573,10 +2573,10 @@ Section5:Button("处理树--自动", function()
 
         if obj.Name:find('Sawmill') then
             Saw = sawmill;
-            notify('梦', '剧木机已选择', 4)
+            notify('小白', '剧木机已选择', 4)
         elseif obj.Parent.Name:find('Sawmill') or obj.Parent:FindFirstChild 'BlockageAlert' then
             Saw = obj.Parent
-            notify('梦', '剧木机已选择', 4)
+            notify('小白', '剧木机已选择', 4)
         end
 
     end)
@@ -2726,7 +2726,7 @@ Sectionqita:Button("获得4个小工具", function()
 end)
 Sectionqita:Toggle("远程打开东西", 'Toggleflag', false, function(state)
     if state then
-        notify('梦', '选择一个东西去打开', 4)
+        notify('小白', '选择一个东西去打开', 4)
         bai.openItem = mouse.Button1Down:Connect(function()
             if mouse.Target then
                 bai.itemtoopen = mouse.Target;
@@ -2738,7 +2738,7 @@ Sectionqita:Toggle("远程打开东西", 'Toggleflag', false, function(state)
             bai.openItem:Disconnect();
             bai.openItem = nil;
         end
-        notify('梦', '打开东西已关闭', 4)
+        notify('小白', '打开东西已关闭', 4)
         bai.itemToOpen = nil;
     end
 end)
@@ -3145,7 +3145,7 @@ Sectionzhenglimt:Toggle("改为竖着整理", 'Toggleflag', false, function(stat
 end)
 Sectionzhenglimt:Button("开始整理", function()
     if bai.zlmt == nil then
-        return notify("梦", "你没有选择木头", 4)
+        return notify("小白", "你没有选择木头", 4)
     end
     if bai.shuzhe == false then
         local oldpos = lp.Character.HumanoidRootPart.Position
@@ -3768,7 +3768,7 @@ Sectionchuanson:Button("删除传送点", function()
 end)
 Sectionchuanson:Button("获得工具", function()
     if bai.itemset == nil then
-        return notify("梦", "请你放传送点", 4)
+        return notify("小白", "请你放传送点", 4)
     end
     local Tool = Instance.new("Tool", game:GetService("Players").LocalPlayer.Backpack)
     Tool.Name = "点击你想要传送的物品"
@@ -3936,7 +3936,7 @@ Sectionchuanson:Toggle("带木板", 'Toggleflag', false, function(state)
 end)
 Sectionchuanson:Button("开始传送选择的物品", function()
     if bai.itemset == nil then
-        return notify("梦", "请你放传送点", 4)
+        return notify("小白", "请你放传送点", 4)
     end
     bai.cskais = true
     OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -4012,21 +4012,21 @@ end)
 Sectionhuanjin:Button("船离开时间", function()
 
     if game.Workspace.Ferry.TimeToDeparture.Value == 0 then
-        notify("梦", "船已离开", 4)
+        notify("小白", "船已离开", 4)
     else
-        notify("梦", "距离船离开时间有" .. game.Workspace.Ferry.TimeToDeparture.Value .. "秒", 4)
+        notify("小白", "距离船离开时间有" .. game.Workspace.Ferry.TimeToDeparture.Value .. "秒", 4)
     end
 end)
 Sectionhuanjin:Button("桥上升时间", function()
 
     if game.Workspace.Bridge.DownTime.Value < 0 then
-        notify("梦", "桥已上升", 4)
+        notify("小白", "桥已上升", 4)
     else
-        notify("梦", "距离桥上升的时间有" .. game.Workspace.Bridge.DownTime.Value .. "秒", 4)
+        notify("小白", "距离桥上升的时间有" .. game.Workspace.Bridge.DownTime.Value .. "秒", 4)
     end
 end)
 Sectionhuanjin:Button("查看游戏时间", function()
-    notify("梦", "游戏时间为" .. tostring(game.Lighting.TimeOfDay):sub(1, -2):sub(1, -2):sub(1, -2), 4)
+    notify("小白", "游戏时间为" .. tostring(game.Lighting.TimeOfDay):sub(1, -2):sub(1, -2):sub(1, -2), 4)
 end)
 Sectionhuanjin:Textbox("自定义亮度", 'TextBoxfalg', "输入亮度", function(s)
     game:GetService("Lighting").Brightness = s / 10
@@ -4381,7 +4381,7 @@ Sectionfengche:Button("获得选择工具", function()
                 Mouse.Target.Parent.SelectionBox:Destroy()
             end
 
-            notify("梦", "汽车已选择", 4)
+            notify("小白", "汽车已选择", 4)
         end
     end)
 end)
@@ -4407,7 +4407,7 @@ Sectionfengche:Button("开始", function()
         a:Disconnect();
         a = nil
     else
-        notify("梦", "你暂时没有选择汽车", 4)
+        notify("小白", "你暂时没有选择汽车", 4)
     end
 end)
 Sectionfengche:Button("停止", function()
@@ -4515,7 +4515,7 @@ Sectionmogui:Button("汽车踢人", function()
     NotificationBindable.OnInvoke = callback
     --
     game.StarterGui:SetCore("SendNotification", {
-        Title = "梦",
+        Title = "小白",
         Text = "使用此功能前请自己拉黑他,然后再打开让他可以坐副驾驶的功能0",
         Icon = "",
         Duration = 5,
@@ -4528,7 +4528,7 @@ end)
 Sectionmogui:Button("斧头杀人", function()
     local tool = getTool()
     if not tool then
-        return notify("梦", "你需要斧头", 4)
+        return notify("小白", "你需要斧头", 4)
     end
     local KillPlayer = bai.playernamedied
 
@@ -4591,7 +4591,7 @@ Sectionmogui:Button("斧头杀人", function()
                 LocalPlayer.CharacterAdded:Wait()
                 Player.Character.HumanoidRootPart.Anchored = false
                 if Player.Character.Humanoid.Health <= 15 then
-                    notify("梦", "成功", 4)
+                    notify("小白", "成功", 4)
                     repeat
                         wait()
                     until LocalPlayer.Character.PrimaryPart ~= nil
@@ -4608,7 +4608,7 @@ Sectionmogui:Button("斧头带人", function()
     Target = bai.playernamedied
     local tool = getTool()
     if not tool then
-        return notify("梦", "你需要斧头", 4)
+        return notify("小白", "你需要斧头", 4)
     end
 
     NOW = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -4660,7 +4660,7 @@ end)
 Sectionmogui:Button("岩浆杀人", function()
     local tool = getTool()
     if not tool then
-        return notify("梦", "你需要斧头", 4)
+        return notify("小白", "你需要斧头", 4)
     end
 
     Target = bai.playernamedied
@@ -4713,7 +4713,7 @@ end)
 Sectionmogui:Button("虚空搞人", function()
     local tool = getTool()
     if not tool then
-        return notify("梦", "你需要斧头", 4)
+        return notify("小白", "你需要斧头", 4)
     end
     Target = bai.playernamedied
     NOW = CFrame.new(9e9, 9e9, 9e9)
@@ -4765,7 +4765,7 @@ Sectionmogui:Button("飞玩家", function()
     Target = bai.playernamedied
     local tool = getTool()
     if not tool then
-        return notify("梦", "你需要斧头", 4)
+        return notify("小白", "你需要斧头", 4)
     end
 
     NOW = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -4836,7 +4836,7 @@ Sectionmogui:Toggle("查看玩家基地", 'Toggleflag', false, function(state)
 
     if state then
         if see == nil then
-            return notify("梦", "没有找到基地", 4)
+            return notify("小白", "没有找到基地", 4)
         end
         game:GetService('Workspace').CurrentCamera.CameraSubject = see
     else
@@ -5192,7 +5192,7 @@ Sectionautobuy6:Button("买黄金蓝图", function()
     NotificationBindable.OnInvoke = callback
     --
     game.StarterGui:SetCore("SendNotification", {
-        Title = "梦",
+        Title = "小白",
         Text = "确定购买？",
         Icon = "",
         Duration = 5,
